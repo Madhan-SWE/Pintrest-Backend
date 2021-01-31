@@ -4,7 +4,7 @@ function authorizeUser(req, res, next) {
     if (req.headers.authorization !== undefined) {
       jwt.verify(
         req.headers.authorization,
-        process.env.JWT_KEY,
+        process.env.JWTKEY,
         (err, decode) => {
           
           if(err && (err.toString()).includes("TokenExpiredError"))
